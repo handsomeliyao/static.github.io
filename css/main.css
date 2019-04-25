@@ -1776,7 +1776,7 @@ img.site-author-image:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ffff9f;
+  background: #ffff69;
 }
 .feed-link,
 .chat {
@@ -1963,10 +1963,13 @@ img.site-author-image:hover {
 .footer-inner {
   text-align: center;
 }
+#animate {
+  animation: iconAnimate 1.33s ease-in-out infinite;
+}
 .with-love {
   display: inline-block;
   margin: 0 5px;
-  color: #808080;
+  color: #f53f3f;
 }
 .powered-by,
 .theme-info {
