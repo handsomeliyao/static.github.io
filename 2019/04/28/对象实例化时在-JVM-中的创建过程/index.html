@@ -111,16 +111,18 @@
 
 
 
-  <meta name="description" content="全栈工程师">
-<meta property="og:type" content="website">
-<meta property="og:title" content="会飞的猪儿丶">
-<meta property="og:url" content="http://yoursite.com/archives/2019/index.html">
+  <meta name="description" content="&amp;emsp;&amp;emsp;Java 是面向对象的静态强类型语言，声明并创建对象的代码很常见，根据某个类声明一个引用变量指向被创建的对象，并使用此引用变量操作该对象。在实例化对象的过程中， JVM 中发生了什么化学反应呢？ &amp;emsp;&amp;emsp;（1）下面从最简单的Object ref = new Object();代码进行分析，利用javap -verbose -p命令查看对象创建的字节码如下：">
+<meta name="keywords" content="JAVA,JVM">
+<meta property="og:type" content="article">
+<meta property="og:title" content="对象实例化时在 JVM 中的创建过程">
+<meta property="og:url" content="http://yoursite.com/2019/04/28/对象实例化时在-JVM-中的创建过程/index.html">
 <meta property="og:site_name" content="会飞的猪儿丶">
-<meta property="og:description" content="全栈工程师">
+<meta property="og:description" content="&amp;emsp;&amp;emsp;Java 是面向对象的静态强类型语言，声明并创建对象的代码很常见，根据某个类声明一个引用变量指向被创建的对象，并使用此引用变量操作该对象。在实例化对象的过程中， JVM 中发生了什么化学反应呢？ &amp;emsp;&amp;emsp;（1）下面从最简单的Object ref = new Object();代码进行分析，利用javap -verbose -p命令查看对象创建的字节码如下：">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-04-28T08:59:17.988Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="会飞的猪儿丶">
-<meta name="twitter:description" content="全栈工程师">
+<meta name="twitter:title" content="对象实例化时在 JVM 中的创建过程">
+<meta name="twitter:description" content="&amp;emsp;&amp;emsp;Java 是面向对象的静态强类型语言，声明并创建对象的代码很常见，根据某个类声明一个引用变量指向被创建的对象，并使用此引用变量操作该对象。在实例化对象的过程中， JVM 中发生了什么化学反应呢？ &amp;emsp;&amp;emsp;（1）下面从最简单的Object ref = new Object();代码进行分析，利用javap -verbose -p命令查看对象创建的字节码如下：">
 
 
 
@@ -128,7 +130,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/archives/2019/">
+  <link rel="canonical" href="http://yoursite.com/2019/04/28/对象实例化时在-JVM-中的创建过程/">
 
 
 
@@ -138,7 +140,7 @@
   };
 </script>
 
-  <title>归档 | 会飞的猪儿丶</title>
+  <title>对象实例化时在 JVM 中的创建过程 | 会飞的猪儿丶</title>
   
 
 
@@ -187,7 +189,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <a href="https://github.com/handsomeliyao" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
@@ -299,7 +301,7 @@
         
         
           
-          <li class="menu-item menu-item-archives menu-item-active">
+          <li class="menu-item menu-item-archives">
 
     
     
@@ -370,174 +372,299 @@
           
             
 
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
-
           
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-      
-      <span class="archive-page-counter">
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/28/对象实例化时在-JVM-中的创建过程/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Liyao">
+      <meta itemprop="description" content="全栈工程师">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="会飞的猪儿丶">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
+          <h1 class="post-title" itemprop="name headline">对象实例化时在 JVM 中的创建过程
+
+              
+            
+          </h1>
         
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-04-28 16:57:47" itemprop="dateCreated datePublished" datetime="2019-04-28T16:57:47+08:00">2019-04-28</time>
+            
+
+            
+          </span>
+
           
-        
-        嗯..! 目前共计 3 篇日志。 继续努力。
-      </span>
-      
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/后台/" itemprop="url" rel="index"><span itemprop="name">后台</span></a></span>
 
-      
-
-        
-        
-        
-
-        
+                
+                
+              
+            </span>
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2019">2019</h1>
-          </div>
-        
-        
 
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2019/04/28/对象实例化时在-JVM-中的创建过程/" itemprop="url">
+          
             
-              <span itemprop="name">对象实例化时在 JVM 中的创建过程</span>
             
-          </a>
-        
-      </h2>
+          
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-04-28T16:57:47+08:00" content="2019-04-28">
-          04-28
-        </time>
-      </div>
+          
+          
 
-    </header>
-  </article>
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon">
+            <i class="fa fa-eye"></i>
+             热度： 
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+	    <span>°C</span>
+            </span>
+          
 
+          
+            <div class="post-symbolscount">
+              
 
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">1.4k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">1 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2019/04/25/聊聊HTML中5中空格实体/" itemprop="url">
-            
-              <span itemprop="name">聊聊HTML中5中空格实体</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-04-25T15:04:58+08:00" content="2019-04-25">
-          04-25
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2019/04/23/在JSP中使用Java代码给hidden域赋值的BUG-JSON中的双引号变成了问号/" itemprop="url">
-            
-              <span itemprop="name">在JSP中使用Java代码给hidden域赋值的BUG , JSON中的双引号变成了问号</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-04-23T14:04:16+08:00" content="2019-04-23">
-          04-23
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+      
+        <p>&emsp;&emsp;Java 是面向对象的静态强类型语言，声明并创建对象的代码很常见，根据某个类声明一个引用变量指向被创建的对象，并使用此引用变量操作该对象。在实例化对象的过程中， JVM 中发生了什么化学反应呢？</p>
+<p>&emsp;&emsp;（1）下面从最简单的<code>Object ref = new Object();</code>代码进行分析，利用<code>javap -verbose -p</code>命令查看对象创建的字节码如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">stack=<span class="number">2</span>, locals=<span class="number">1</span>, args_size=<span class="number">0</span></span><br><span class="line">    NEW java/lang/Object</span><br><span class="line">    DUP</span><br><span class="line">    INVOKESPECIAL java/lang/Object.&lt;init&gt; ()V</span><br><span class="line">    ASTORE_1</span><br><span class="line">    LocalVariableTable:</span><br><span class="line">		Start  Length  Slot  Name  Signature</span><br><span class="line">		  <span class="number">8</span>       <span class="number">1</span>     <span class="number">0</span>     ref  Ljava/lang/Object;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>NEW</p>
+<p>&emsp;&emsp;如果找不到 Class 对象，则进行类加载。加载成功后，则在堆中分配内存，从 Object 类开始到本类路径上的所有属性值都要分配内存。分配完毕后，进行零值初始化。在分配过程中，注意引用是占据存储空间的，它是一个变量，占用 4 个字节。这个指令完毕后，将指向实例对象的引用变量压入虚拟机栈顶。</p>
+</li>
+<li><p>DUP</p>
+<p>&emsp;&emsp;在栈顶复制该引用变量，这时的栈顶有两个指向堆内实例对象的引用变量。如果<code>&lt;init&gt;</code>方法有参数，还需要把参数压入操作栈中。两个引用变量的目的不同，其中压至底下的引用用于赋值，或者保存到局部变量表，另一个栈顶的引用变量作为句柄调用相关方法。</p>
+</li>
+<li><p>INVOKESPECIAL</p>
+<p>&emsp;&emsp;调用对象实例方法，通过栈顶的引用变量调用<code>&lt;init&gt;</code>方法。<code>&lt;clinit&gt;</code>是类初始化时执行的方法，而<code>&lt;init&gt;</code>是对象初始化时执行的方法。</p>
+</li>
+</ul>
+<p>&emsp;&emsp;（2）前面所述是从字节码的角度看待对象的创建过程，现在从执行步骤的角度来分析：</p>
+<ul>
+<li>确认类元信息是否存在。当 JVM 接收到 new 指令时，首先在 metaspace 内检查需要创建的类元信息是否存在。若不存在，那么在双亲委派模式下，使用当前类加载器以 ClassLoader + 包名 + 类名为 Key 进行查找对应的 .class 文件。如果没有找到文件，则抛出 ClassNotFoundException 异常；如果找到，则进行类加载，并生成对应的 Class 类对象。</li>
+<li>分配对象内存。首先计算对象占用空间大小，如果实例成员变量是引用变量，仅分配引用变量空间即可，即 4 个字节大小，接着在堆中划分一块内存给新对象。在分配内存空间时，需要进行同步操作，比如采用 CAS（Compare And Swap）失败重试、区域加锁等方式保证分配操作的原子性。</li>
+<li>设定默认值。成员变量值都需要设定为默认值，即各种不同形式的零值。</li>
+<li>设置对象头。设置新对象的哈希码、 GC 信息、锁信息、对象所属的类元信息等。这个过程的具体设置方式取决于 JVM 实现。</li>
+<li>执行 init 方法。初始化成员变量，执行实例化代码块，调用类的构造方法，并把堆内对象的首地址赋值给引用变量。</li>
+</ul>
 
       
-
     </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+      <div>
+        <div id="reward-container">
+  <div style="margin-bottom: 25px;">坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="reward-button" disable="enable" onclick="var qr = document.getElementById(&quot;qr&quot;); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+
+    
+      
+      
+        
+      
+      <div style="display: inline-block">
+        <img src="/images/wechatpay.png" alt="Liyao 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+      
+      
+        
+      
+      <div style="display: inline-block">
+        <img src="/images/alipay.png" alt="Liyao 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <div>
+      
+      <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:15px;">-------------&nbsp;本文结束<i class="fa fa-paw"></i>感谢您的阅读&nbsp;-------------</div>
+    
+</div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/JAVA/" rel="tag"><i class="fa fa-tag"></i> JAVA</a>
+          
+            <a href="/tags/JVM/" rel="tag"><i class="fa fa-tag"></i> JVM</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/04/25/聊聊HTML中5中空格实体/" rel="next" title="聊聊HTML中5中空格实体">
+                <i class="fa fa-chevron-left"></i> 聊聊HTML中5中空格实体
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+  </div>
 
 
           </div>
           
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC80MzkyMi8yMDQ1OA=="></div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -886,6 +1013,10 @@
 
 
   
+  <script src="/js/scrollspy.js?v=7.1.0"></script>
+<script src="/js/post-details.js?v=7.1.0"></script>
+
+
 
   
 
@@ -901,6 +1032,23 @@
 
   
 
+
+  
+    <script>
+  window.livereOptions = {
+    refer: '2019/04/28/对象实例化时在-JVM-中的创建过程/'
+  };
+  (function(d, s) {
+    var j, e = d.getElementsByTagName(s)[0];
+    if (typeof LivereTower === 'function') { return; }
+    j = d.createElement(s);
+    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    j.async = true;
+    e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+</script>
+
+  
 
 
   
