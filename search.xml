@@ -3,11 +3,12 @@
   <entry>
     <title><![CDATA[JVM内存布局，新生代与老年代]]></title>
     <url>%2F2019%2F04%2F29%2FJVM%E5%86%85%E5%AD%98%E5%B8%83%E5%B1%80%EF%BC%8C%E6%96%B0%E7%94%9F%E4%BB%A3%E4%B8%8E%E8%80%81%E5%B9%B4%E4%BB%A3%2F</url>
-    <content type="text"><![CDATA[&emsp;&emsp;内存是非常重要的系统资源，是硬盘和 CPU 的中间仓库和桥梁，]]></content>
+    <content type="text"><![CDATA[&emsp;&emsp;内存是非常重要的系统资源，是硬盘和 CPU 的中间仓库和桥梁，承载着操作系统和应用程序的实时运行。 JVM 内存布局规定了 JAVA 在运行过程中内存申请、分配、管理的策略，保证了 JVM 的高效稳定运行。不同的 JVM 对于内存的划分方式和管理机制存在着部分差异。结合 JVM 虚拟机规范，来探讨一下经典的 JVM 内存布局，如下图： 1、Heap （堆区）&emsp;&emsp;Heap 是 OOM 故障最主要]]></content>
       <categories>
         <category>后端</category>
       </categories>
       <tags>
+        <tag>JAVA</tag>
         <tag>JVM</tag>
       </tags>
   </entry>
@@ -16,11 +17,11 @@
     <url>%2F2019%2F04%2F28%2F%E5%AF%B9%E8%B1%A1%E5%AE%9E%E4%BE%8B%E5%8C%96%E6%97%B6%E5%9C%A8-JVM-%E4%B8%AD%E7%9A%84%E5%88%9B%E5%BB%BA%E8%BF%87%E7%A8%8B%2F</url>
     <content type="text"><![CDATA[&emsp;&emsp;Java 是面向对象的静态强类型语言，声明并创建对象的代码很常见，根据某个类声明一个引用变量指向被创建的对象，并使用此引用变量操作该对象。在实例化对象的过程中， JVM 中发生了什么化学反应呢？ &emsp;&emsp;（1）下面从最简单的Object ref = new Object();代码进行分析，利用javap -verbose -p命令查看对象创建的字节码如下： 12345678stack=2, locals=1, args_size=0 NEW java/lang/Object DUP INVOKESPECIAL java/lang/Object.&lt;init&gt; ()V ASTORE_1 LocalVariableTable: Start Length Slot Name Signature 8 1 0 ref Ljava/lang/Object; NEW &emsp;&emsp;如果找不到 Class 对象，则进行类加载。加载成功后，则在堆中分配内存，从 Object 类开始到本类路径上的所有属性值都要分配内存。分配完毕后，进行零值初始化。在分配过程中，注意引用是占据存储空间的，它是一个变量，占用 4 个字节。这个指令完毕后，将指向实例对象的引用变量压入虚拟机栈顶。 DUP &emsp;&emsp;在栈顶复制该引用变量，这时的栈顶有两个指向堆内实例对象的引用变量。如果&lt;init&gt;方法有参数，还需要把参数压入操作栈中。两个引用变量的目的不同，其中压至底下的引用用于赋值，或者保存到局部变量表，另一个栈顶的引用变量作为句柄调用相关方法。 INVOKESPECIAL &emsp;&emsp;调用对象实例方法，通过栈顶的引用变量调用&lt;init&gt;方法。&lt;clinit&gt;是类初始化时执行的方法，而&lt;init&gt;是对象初始化时执行的方法。 &emsp; &emsp;&emsp;（2）前面所述是从字节码的角度看待对象的创建过程，现在从执行步骤的角度来分析： 确认类元信息是否存在 &emsp;&emsp;当 JVM 接收到 new 指令时，首先在 metaspace 内检查需要创建的类元信息是否存在。若不存在，那么在双亲委派模式下，使用当前类加载器以 ClassLoader + 包名 + 类名为 Key 进行查找对应的 .class 文件。如果没有找到文件，则抛出 ClassNotFoundException 异常；如果找到，则进行类加载，并生成对应的 Class 类对象。 分配对象内存 &emsp;&emsp;首先计算对象占用空间大小，如果实例成员变量是引用变量，仅分配引用变量空间即可，即 4 个字节大小，接着在堆中划分一块内存给新对象。在分配内存空间时，需要进行同步操作，比如采用 CAS（Compare And Swap）失败重试、区域加锁等方式保证分配操作的原子性。 设定默认值 &emsp;&emsp;成员变量值都需要设定为默认值，即各种不同形式的零值。 设置对象头 &emsp;&emsp;设置新对象的哈希码、 GC 信息、锁信息、对象所属的类元信息等。这个过程的具体设置方式取决于 JVM 实现。 执行 init 方法 &emsp;&emsp;初始化成员变量，执行实例化代码块，调用类的构造方法，并把堆内对象的首地址赋值给引用变量。]]></content>
       <categories>
-        <category>后台</category>
+        <category>后端</category>
       </categories>
       <tags>
-        <tag>JVM</tag>
         <tag>JAVA</tag>
+        <tag>JVM</tag>
       </tags>
   </entry>
   <entry>
