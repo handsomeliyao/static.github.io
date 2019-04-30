@@ -121,7 +121,7 @@
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://yoursite.com/2019/04/29/JVM内存布局，新生代与老年代/memory_layout.png">
 <meta property="og:image" content="http://yoursite.com/2019/04/29/JVM内存布局，新生代与老年代/cenozoic_and_old_age.png">
-<meta property="og:updated_time" content="2019-04-30T01:43:59.473Z">
+<meta property="og:updated_time" content="2019-04-30T01:47:20.209Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JVM内存布局，新生代与老年代">
 <meta name="twitter:description" content="&amp;emsp;&amp;emsp;内存是非常重要的系统资源，是硬盘和 CPU 的中间仓库和桥梁，承载着操作系统和应用程序的实时运行。 JVM 内存布局规定了 JAVA 在运行过程中内存申请、分配、管理的策略，保证了 JVM 的高效稳定运行。不同的 JVM 对于内存的划分方式和管理机制存在着部分差异。结合 JVM 虚拟机规范，来探讨一下经典的 JVM 内存布局，如下图：  1、Heap （堆区）&amp;emsp;&amp;">
@@ -539,7 +539,7 @@
 <p>&emsp;&emsp;为了解决该问题，需要设定运行参数 <code>-XX:MaxPermSize=1280m</code>，如果部署到新机器上，往往会因为 JVM 参数没有修改导致故障重现。不熟悉此应用的人排查问题时往往苦不堪言，除此之外，永久代在垃圾回收过程中还存在诸多问题。所以 JDK 8 使用元空间替换永久代。在 JDK 8 及以上版本中，设定 <code>MaxPermSize</code> 参数，JVM 在启动时并不会报错，但是会提示：</p>
 <p><code>Java HotSpot 64Bit Server VM warning: ignoring option MaxPermSize=2560m; support was removed in 8.0</code></p>
 <p>&emsp;&emsp;区别于永久代，元空间在本地内存中分配。在 JDK 8 里，Perm 区中的所有内容中字符串常量移至堆内存，其他内容包括类元信息、字段、静态属性、方法、常量等都移动至元空间内，比如下图常量池中的 Object 类元信息、静态属性 System.out 、整型常量 10000000 等。下图常量池中显示在常量池中的 String，其实际对象是被保存在堆内存中的。</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Constant pool:</span><br><span class="line">	#1 = Methodref	 #6.#28		// java/lang/Object."&lt;init&gt;":()V</span><br><span class="line">	#2 = Fieldred	 #29.#30	// java/lang/System.out:Ljava/io/PrintStream;</span><br><span class="line">	#3 = String		 #31		// hello Jdk11...</span><br><span class="line">	#4 = Methodref	 #32.#33	// java/io/PrintStream.println():(Ljava/lang/String;)V</span><br><span class="line">    #5 = Integer	 10000000</span><br><span class="line">    #6 = Class		 #34		// java/lang/Object</span><br></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Constant pool:</span><br><span class="line">	#1 = Methodref	 #6.#28		// java/lang/Object."&lt;init&gt;":()V</span><br><span class="line">	#2 = Fieldred	 #29.#30	// java/lang/System.out:Ljava/io/PrintStream;</span><br><span class="line">	#3 = String		 #31		// hello Jdk11...</span><br><span class="line">	#4 = Methodref	 #32.#33	// java/io/PrintStream.println():(Ljava/lang/String;)V</span><br><span class="line">	#5 = Integer	 10000000</span><br><span class="line">	#6 = Class		 #34		// java/lang/Object</span><br></pre></td></tr></table></figure>
 <h2 id="3、JVM-Stack-（虚拟机栈）"><a href="#3、JVM-Stack-（虚拟机栈）" class="headerlink" title="3、JVM Stack （虚拟机栈）"></a><strong>3、JVM Stack （虚拟机栈）</strong></h2>
       
     </div>
