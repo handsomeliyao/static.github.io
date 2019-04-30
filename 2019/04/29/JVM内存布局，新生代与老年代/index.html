@@ -123,7 +123,7 @@
 <meta property="og:image" content="http://yoursite.com/2019/04/29/JVM内存布局，新生代与老年代/cenozoic_and_old_age.png">
 <meta property="og:image" content="http://yoursite.com/2019/04/29/JVM内存布局，新生代与老年代/operation_stack.png">
 <meta property="og:image" content="http://yoursite.com/2019/04/29/JVM内存布局，新生代与老年代/java_processes_and_memory.png">
-<meta property="og:updated_time" content="2019-04-30T06:08:40.855Z">
+<meta property="og:updated_time" content="2019-04-30T06:58:24.457Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JVM内存布局，新生代与老年代">
 <meta name="twitter:description" content="&amp;emsp;&amp;emsp;内存是非常重要的系统资源，是硬盘和 CPU 的中间仓库和桥梁，承载着操作系统和应用程序的实时运行。 JVM 内存布局规定了 JAVA 在运行过程中内存申请、分配、管理的策略，保证了 JVM 的高效稳定运行。不同的 JVM 对于内存的划分方式和管理机制存在着部分差异。结合 JVM 虚拟机规范，来探讨一下经典的 JVM 内存布局，如下图：  1、Heap （堆区）&amp;emsp;&amp;">
@@ -317,6 +317,23 @@
     
 
     <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-positiveenergy">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/positive_energy/" rel="section"><i class="menu-item-icon fa fa-fw fa-grin"></i> <br>正能量</a>
 
   </li>
 
@@ -587,7 +604,7 @@
 <p>&emsp;&emsp;●   PC 计数器指向方法调用后的下一条指令。</p>
 <h2 id="4、Native-Method-Stacks（本地方法栈）"><a href="#4、Native-Method-Stacks（本地方法栈）" class="headerlink" title="4、Native Method Stacks（本地方法栈）"></a><strong>4、Native Method Stacks（本地方法栈）</strong></h2><p>&emsp;&emsp;本地方法栈（Native Method Stack）在 JVM 内存布局中，也是线程对象私有的，但是虚拟机栈 “主内” ，而本地方法栈 “主外” 。这个 “内外” 是针对 JVM 来说的，本地方法栈为 Native 方法服务。线程开始调用本地方法时，会进入一个不再受 JVM 约束的世界。本地方法可以通过 JNI（Java Native Interface）来访问虚拟机运行时的数据区，甚至可以调用寄存器，具有和 JVM 相同的能力和权限。当大量本地方法出现时，势必会削弱 JVM 对系统的控制力，因为它的出错信息都比较黑盒。对于内存不足的情况，本地方法栈还是会抛出 <code>native heap OutOfMemory</code></p>
 <p>&emsp;&emsp;重点说一下 JNI 类本地方法，最著名的本地方法应该是 <code>System.currentTimeMillis()</code>，JNI 使 Java 深度使用操作系统的特性功能，复用非 Java 代码。但是在项目过程中，如果大量使用其他语言来实现 JNI ，就会丧失跨平台特性，威胁到程序运行的稳定性。假如需要与本地代码交互，就可以用中间标准框架进行解耦，这样即使本地方法崩溃也不至于影响到 JVM 的稳定。当然，如果要求极高的执行效率、偏底层的跨进程操作等，可以考虑设计为 JNI 调用方式。</p>
-<h2 id="4、Program-Counter-Register（程序计数寄存器）"><a href="#4、Program-Counter-Register（程序计数寄存器）" class="headerlink" title="4、Program Counter Register（程序计数寄存器）"></a><strong>4、Program Counter Register（程序计数寄存器）</strong></h2><p>&emsp;&emsp;在程序计数寄存器（Program Counter Register，PC）中，Register 的命名源于 CPU 的寄存器， CPU 只有把数据装载到寄存器才能够运行。寄存器存储指令相关的现场信息，由于 CPU 时间片轮限制，众多线程在并发执行过程中，任何一个确定的时刻，一个处理器或者多核处理器中的一个内核，只会执行某个线程中的一条指令。这样必然导致经常中断或恢复，如何保证分毫无差呢？每个线程在创建后，都会产生自己的程序计数器和栈帧，程序计数器用来存放执行指令的偏移量和行号指示器等，线程执行或恢复都要依赖程序计数器。程序计数器在各个线程之间互不影响，此区域也不会发生内存溢出异常。</p>
+<h2 id="5、Program-Counter-Register（程序计数寄存器）"><a href="#5、Program-Counter-Register（程序计数寄存器）" class="headerlink" title="5、Program Counter Register（程序计数寄存器）"></a><strong>5、Program Counter Register（程序计数寄存器）</strong></h2><p>&emsp;&emsp;在程序计数寄存器（Program Counter Register，PC）中，Register 的命名源于 CPU 的寄存器， CPU 只有把数据装载到寄存器才能够运行。寄存器存储指令相关的现场信息，由于 CPU 时间片轮限制，众多线程在并发执行过程中，任何一个确定的时刻，一个处理器或者多核处理器中的一个内核，只会执行某个线程中的一条指令。这样必然导致经常中断或恢复，如何保证分毫无差呢？每个线程在创建后，都会产生自己的程序计数器和栈帧，程序计数器用来存放执行指令的偏移量和行号指示器等，线程执行或恢复都要依赖程序计数器。程序计数器在各个线程之间互不影响，此区域也不会发生内存溢出异常。</p>
 <p>&emsp;&emsp;最后，从线程共享的角度来看，堆和元空间是所有线程共享的，而虚拟机栈、本地方法栈、程序计数器是线程内部私有的，从这个角度看一下 Java 内存结构，如下图所示：</p>
 <p><img src="/2019/04/29/JVM内存布局，新生代与老年代/java_processes_and_memory.png" alt></p>
 
@@ -915,7 +932,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1、Heap-（堆区）"><span class="nav-number">1.</span> <span class="nav-text">1、Heap （堆区）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、Metaspace-（元空间）"><span class="nav-number">2.</span> <span class="nav-text">2、Metaspace （元空间）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3、JVM-Stack-（虚拟机栈）"><span class="nav-number">3.</span> <span class="nav-text">3、JVM Stack （虚拟机栈）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4、Native-Method-Stacks（本地方法栈）"><span class="nav-number">4.</span> <span class="nav-text">4、Native Method Stacks（本地方法栈）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4、Program-Counter-Register（程序计数寄存器）"><span class="nav-number">5.</span> <span class="nav-text">4、Program Counter Register（程序计数寄存器）</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1、Heap-（堆区）"><span class="nav-number">1.</span> <span class="nav-text">1、Heap （堆区）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、Metaspace-（元空间）"><span class="nav-number">2.</span> <span class="nav-text">2、Metaspace （元空间）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3、JVM-Stack-（虚拟机栈）"><span class="nav-number">3.</span> <span class="nav-text">3、JVM Stack （虚拟机栈）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4、Native-Method-Stacks（本地方法栈）"><span class="nav-number">4.</span> <span class="nav-text">4、Native Method Stacks（本地方法栈）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5、Program-Counter-Register（程序计数寄存器）"><span class="nav-number">5.</span> <span class="nav-text">5、Program Counter Register（程序计数寄存器）</span></a></li></ol></div>
             
 
           </div>
