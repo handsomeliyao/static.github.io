@@ -48,7 +48,7 @@ for $mixin in $mixins
 .header {
   position: relative;
   margin: 0 auto;
-  width: 1060px;
+  width: 960px;
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .header {
@@ -108,7 +108,7 @@ for $mixin in $mixins
   }
 }
 .container .main-inner {
-  width: 1060px;
+  width: 960px;
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .container .main-inner {
@@ -167,7 +167,7 @@ for $mixin in $mixins
   display: none;
 }
 .footer-inner {
-  width: 1060px;
+  width: 960px;
   padding-left: 260px;
 }
 @media (min-width: 768px) and (max-width: 991px) {
