@@ -184,3 +184,10 @@ for $mixin in $mixins
     padding-right: 0 !important;
   }
 }
+
+.i_s_t{
+    font: 13px Lucida Console, serif;
+}
+.i_s_s{
+    font: 13px sans-serif;
+}
