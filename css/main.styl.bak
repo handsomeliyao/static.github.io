@@ -185,9 +185,13 @@ for $mixin in $mixins
   }
 }
 
-.i_s_t{
+.ct{
+    position: relative;
+    top: -8px;
+}
+.ct:nth-child(1){
     font: 13px Lucida Console, serif;
 }
-.i_s_s{
+.ct:nth-child(2){
     font: 13px sans-serif;
 }
