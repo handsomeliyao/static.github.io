@@ -189,9 +189,9 @@ for $mixin in $mixins
     position: relative;
     top: -8px;
 }
-.ct:nth-child(1){
+.ct span:nth-child(1){
     font: 13px Lucida Console, serif;
 }
-.ct:nth-child(2){
+.ct span:nth-child(2){
     font: 13px sans-serif;
 }
