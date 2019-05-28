@@ -195,3 +195,7 @@ for $mixin in $mixins
 .ct span:nth-child(2){
     font: 13px sans-serif;
 }
+.i_h{
+    visibility: hidden;
+    height: 0;
+}
