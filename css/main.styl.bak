@@ -198,4 +198,6 @@ for $mixin in $mixins
 .i_h{
     visibility: hidden;
     height: 0;
+    position: relative;
+    padding-top: 0 !important;
 }

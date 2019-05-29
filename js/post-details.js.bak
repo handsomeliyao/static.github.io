@@ -101,5 +101,4 @@ $(document).ready(function() {
       }
       : NexT.utils.displaySidebar();
   }
-  $(".i_h").prev().prev("hr").css("margin-bottom","0");
 });
