@@ -1854,7 +1854,7 @@ img.site-author-image:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ffff73;
+  background: #96ffff;
 }
 .feed-link,
 .chat {
@@ -3040,5 +3040,4 @@ code {
   position: relative;
   padding-top: 0 !important;
   margin-top: -24px;
-  padding-bottom: 24px;
 }

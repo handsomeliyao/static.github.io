@@ -201,5 +201,4 @@ for $mixin in $mixins
     position: relative;
     padding-top: 0 !important;
     margin-top: -24px;
-    padding-bottom: 24px;
 }
