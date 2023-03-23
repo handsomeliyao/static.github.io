@@ -176,6 +176,112 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://handsomeliyao.github.io/2023/03/23/Hexo%E6%B7%BB%E5%8A%A0%E9%BC%A0%E6%A0%87%E7%82%B9%E5%87%BB%E6%A1%83%E5%BF%83%E7%89%B9%E6%95%88-%E7%BD%91%E7%AB%99%E5%BA%95%E9%83%A8%E6%B7%BB%E5%8A%A0%E7%BD%91%E7%AB%99%E8%BF%90%E8%A1%8C%E6%97%B6%E9%97%B4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/person2.png">
+      <meta itemprop="name" content="LI YAO">
+      <meta itemprop="description" content="伸手摘星, 即使一无所获, 也不至于满手污泥">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="LI YAO'S BLOG">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/03/23/Hexo%E6%B7%BB%E5%8A%A0%E9%BC%A0%E6%A0%87%E7%82%B9%E5%87%BB%E6%A1%83%E5%BF%83%E7%89%B9%E6%95%88-%E7%BD%91%E7%AB%99%E5%BA%95%E9%83%A8%E6%B7%BB%E5%8A%A0%E7%BD%91%E7%AB%99%E8%BF%90%E8%A1%8C%E6%97%B6%E9%97%B4/" class="post-title-link" itemprop="url">Hexo添加鼠标点击桃心特效/网站底部添加网站运行时间</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2023-03-23 16:43:26 / 修改时间：16:51:44" itemprop="dateCreated datePublished" datetime="2023-03-23T16:43:26+08:00">2023-03-23</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Hexo/" itemprop="url" rel="index"><span itemprop="name">Hexo</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2023/03/23/Hexo%E6%B7%BB%E5%8A%A0%E9%BC%A0%E6%A0%87%E7%82%B9%E5%87%BB%E6%A1%83%E5%BF%83%E7%89%B9%E6%95%88-%E7%BD%91%E7%AB%99%E5%BA%95%E9%83%A8%E6%B7%BB%E5%8A%A0%E7%BD%91%E7%AB%99%E8%BF%90%E8%A1%8C%E6%97%B6%E9%97%B4/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2023/03/23/Hexo%E6%B7%BB%E5%8A%A0%E9%BC%A0%E6%A0%87%E7%82%B9%E5%87%BB%E6%A1%83%E5%BF%83%E7%89%B9%E6%95%88-%E7%BD%91%E7%AB%99%E5%BA%95%E9%83%A8%E6%B7%BB%E5%8A%A0%E7%BD%91%E7%AB%99%E8%BF%90%E8%A1%8C%E6%97%B6%E9%97%B4/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>497</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>2 分钟</span>
+            </span>
+          
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h6 id="添加鼠标点击桃心特效"><a href="#添加鼠标点击桃心特效" class="headerlink" title="添加鼠标点击桃心特效"></a>添加鼠标点击桃心特效</h6><p>在主题目录的<code>source</code>目录下新建<code>love.js</code>（…\themes\next\source\love.js）</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">!<span class="keyword">function</span>(<span class="params">e,t,a</span>)&#123;<span class="keyword">function</span> <span class="title function_">n</span>(<span class="params"></span>)&#123;<span class="title function_">c</span>(<span class="string">&quot;.heart&#123;width: 10px;height: 10px;position: fixed;background: #f00;transform: rotate(45deg);-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);&#125;.heart:after,.heart:before&#123;content: &#x27;&#x27;;width: inherit;height: inherit;background: inherit;border-radius: 50%;-webkit-border-radius: 500%;-moz-border-radius: 50%;position: fixed;&#125;.heart:after&#123;top: -5px;&#125;.heart:before&#123;left: -5px;&#125;&quot;</span>),<span class="title function_">o</span>(),<span class="title function_">r</span>()&#125;<span class="keyword">function</span> <span class="title function_">r</span>(<span class="params"></span>)&#123;<span class="keyword">for</span>(<span class="keyword">var</span> e=<span class="number">0</span>;e&lt;d.<span class="property">length</span>;e++)d[e].<span class="property">alpha</span>&lt;=<span class="number">0</span>?(t.<span class="property">body</span>.<span class="title function_">removeChild</span>(d[e].<span class="property">el</span>),d.<span class="title function_">splice</span>(e,<span class="number">1</span>)):(d[e].<span class="property">y</span>--,d[e].<span class="property">scale</span>+=<span class="number">.004</span>,d[e].<span class="property">alpha</span>-=<span class="number">.013</span>,d[e].<span class="property">el</span>.<span class="property">style</span>.<span class="property">cssText</span>=<span class="string">&quot;left:&quot;</span>+d[e].<span class="property">x</span>+<span class="string">&quot;px;top:&quot;</span>+d[e].<span class="property">y</span>+<span class="string">&quot;px;opacity:&quot;</span>+d[e].<span class="property">alpha</span>+<span class="string">&quot;;transform:scale(&quot;</span>+d[e].<span class="property">scale</span>+<span class="string">&quot;,&quot;</span>+d[e].<span class="property">scale</span>+<span class="string">&quot;) rotate(45deg);background:&quot;</span>+d[e].<span class="property">color</span>+<span class="string">&quot;;z-index:99999&quot;</span>);<span class="title function_">requestAnimationFrame</span>(r)&#125;<span class="keyword">function</span> <span class="title function_">o</span>(<span class="params"></span>)&#123;<span class="keyword">var</span> t=<span class="string">&quot;function&quot;</span>==<span class="keyword">typeof</span> e.<span class="property">onclick</span>&amp;&amp;e.<span class="property">onclick</span>;e.<span class="property">onclick</span>=<span class="keyword">function</span>(<span class="params">e</span>)&#123;t&amp;&amp;<span class="title function_">t</span>(),<span class="title function_">i</span>(e)&#125;&#125;<span class="keyword">function</span> <span class="title function_">i</span>(<span class="params">e</span>)&#123;<span class="keyword">var</span> a=t.<span class="title function_">createElement</span>(<span class="string">&quot;div&quot;</span>);a.<span class="property">className</span>=<span class="string">&quot;heart&quot;</span>,d.<span class="title function_">push</span>(&#123;<span class="attr">el</span>:a,<span class="attr">x</span>:e.<span class="property">clientX</span>-<span class="number">5</span>,<span class="attr">y</span>:e.<span class="property">clientY</span>-<span class="number">5</span>,<span class="attr">scale</span>:<span class="number">1</span>,<span class="attr">alpha</span>:<span class="number">1</span>,<span class="attr">color</span>:<span class="title function_">s</span>()&#125;),t.<span class="property">body</span>.<span class="title function_">appendChild</span>(a)&#125;<span class="keyword">function</span> <span class="title function_">c</span>(<span class="params">e</span>)&#123;<span class="keyword">var</span> a=t.<span class="title function_">createElement</span>(<span class="string">&quot;style&quot;</span>);a.<span class="property">type</span>=<span class="string">&quot;text/css&quot;</span>;<span class="keyword">try</span>&#123;a.<span class="title function_">appendChild</span>(t.<span class="title function_">createTextNode</span>(e))&#125;<span class="keyword">catch</span>(t)&#123;a.<span class="property">styleSheet</span>.<span class="property">cssText</span>=e&#125;t.<span class="title function_">getElementsByTagName</span>(<span class="string">&quot;head&quot;</span>)[<span class="number">0</span>].<span class="title function_">appendChild</span>(a)&#125;<span class="keyword">function</span> <span class="title function_">s</span>(<span class="params"></span>)&#123;<span class="keyword">return</span><span class="string">&quot;rgb(&quot;</span>+~~(<span class="number">255</span>*<span class="title class_">Math</span>.<span class="title function_">random</span>())+<span class="string">&quot;,&quot;</span>+~~(<span class="number">255</span>*<span class="title class_">Math</span>.<span class="title function_">random</span>())+<span class="string">&quot;,&quot;</span>+~~(<span class="number">255</span>*<span class="title class_">Math</span>.<span class="title function_">random</span>())+<span class="string">&quot;)&quot;</span>&#125;<span class="keyword">var</span> d=[];e.<span class="property">requestAnimationFrame</span>=<span class="keyword">function</span>(<span class="params"></span>)&#123;<span class="keyword">return</span> e.<span class="property">requestAnimationFrame</span>||e.<span class="property">webkitRequestAnimationFrame</span>||e.<span class="property">mozRequestAnimationFrame</span>||e.<span class="property">oRequestAnimationFrame</span>||e.<span class="property">msRequestAnimationFrame</span>||<span class="keyword">function</span>(<span class="params">e</span>)&#123;<span class="built_in">setTimeout</span>(e,<span class="number">1e3</span>/<span class="number">60</span>)&#125;&#125;(),<span class="title function_">n</span>()&#125;(<span class="variable language_">window</span>,<span class="variable language_">document</span>);</span><br></pre></td></tr></table></figure>
+
+<p>修改主题的<code>_layout.swig</code>文件，路径：<code>...\themes\next\layout\_layout.swig</code></p>
+<p>在<code>&lt;head&gt;</code>标签中添加<code>love.js</code></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span> <span class="attr">src</span>=<span class="string">&quot;/love.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h6 id><a href="#" class="headerlink" title></a></h6><h6 id="网站底部添加网站运行时间"><a href="#网站底部添加网站运行时间" class="headerlink" title="网站底部添加网站运行时间"></a>网站底部添加网站运行时间</h6><p>修改主题下<code>...\themes\next\layout\_partials\footer.swig</code>，并添加内容如下：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 网站运行时间的设置 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">&quot;timeDate&quot;</span>&gt;</span>载入天数...<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">&quot;times&quot;</span>&gt;</span>载入时分秒...<span class="tag">&lt;/<span class="name">span</span>&gt;</span>  Sometimes your whole life boils down to one insame move.</span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">var</span> now = <span class="keyword">new</span> <span class="title class_">Date</span>();</span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">function</span> <span class="title function_">createtime</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">var</span> grt= <span class="keyword">new</span> <span class="title class_">Date</span>(<span class="string">&quot;01/05/2020 00:00:00&quot;</span>);<span class="comment">//此处修改你的建站时间或者网站上线时间</span></span></span><br><span class="line"><span class="language-javascript">        now.<span class="title function_">setTime</span>(now.<span class="title function_">getTime</span>()+<span class="number">250</span>);</span></span><br><span class="line"><span class="language-javascript">        days = (now - grt ) / <span class="number">1000</span> / <span class="number">60</span> / <span class="number">60</span> / <span class="number">24</span>; dnum = <span class="title class_">Math</span>.<span class="title function_">floor</span>(days);</span></span><br><span class="line"><span class="language-javascript">        hours = (now - grt ) / <span class="number">1000</span> / <span class="number">60</span> / <span class="number">60</span> - (<span class="number">24</span> * dnum); hnum = <span class="title class_">Math</span>.<span class="title function_">floor</span>(hours);</span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">if</span>(<span class="title class_">String</span>(hnum).<span class="property">length</span> ==<span class="number">1</span> )&#123;hnum = <span class="string">&quot;0&quot;</span> + hnum;&#125; minutes = (now - grt ) / <span class="number">1000</span> /<span class="number">60</span> - (<span class="number">24</span> * <span class="number">60</span> * dnum) - (<span class="number">60</span> * hnum);</span></span><br><span class="line"><span class="language-javascript">        mnum = <span class="title class_">Math</span>.<span class="title function_">floor</span>(minutes); <span class="keyword">if</span>(<span class="title class_">String</span>(mnum).<span class="property">length</span> ==<span class="number">1</span> )&#123;mnum = <span class="string">&quot;0&quot;</span> + mnum;&#125;</span></span><br><span class="line"><span class="language-javascript">        seconds = (now - grt ) / <span class="number">1000</span> - (<span class="number">24</span> * <span class="number">60</span> * <span class="number">60</span> * dnum) - (<span class="number">60</span> * <span class="number">60</span> * hnum) - (<span class="number">60</span> * mnum);</span></span><br><span class="line"><span class="language-javascript">        snum = <span class="title class_">Math</span>.<span class="title function_">round</span>(seconds); <span class="keyword">if</span>(<span class="title class_">String</span>(snum).<span class="property">length</span> ==<span class="number">1</span> )&#123;snum = <span class="string">&quot;0&quot;</span> + snum;&#125;</span></span><br><span class="line"><span class="language-javascript">        <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;timeDate&quot;</span>).<span class="property">innerHTML</span> = <span class="string">&quot;本站已安全运行 &quot;</span>+dnum+<span class="string">&quot; 天 &quot;</span>;</span></span><br><span class="line"><span class="language-javascript">        <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;times&quot;</span>).<span class="property">innerHTML</span> = hnum + <span class="string">&quot; 小时 &quot;</span> + mnum + <span class="string">&quot; 分 &quot;</span> + snum + <span class="string">&quot; 秒&quot;</span>;</span></span><br><span class="line"><span class="language-javascript">&#125;</span></span><br><span class="line"><span class="language-javascript"><span class="built_in">setInterval</span>(<span class="string">&quot;createtime()&quot;</span>,<span class="number">250</span>);</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>配置好后，使用<code>hexo g</code>与<code>hexo s</code>命令部署启动查看效果即可</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://handsomeliyao.github.io/2023/03/22/Hexo%E6%B7%BB%E5%8A%A0GitHub%E9%93%BE%E6%8E%A5%E6%95%88%E6%9E%9C/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -435,10 +541,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2023-03-21 18:00:50 / 修改时间：18:54:58" itemprop="dateCreated datePublished" datetime="2023-03-21T18:00:50+08:00">2023-03-21</time>
+              <time title="创建时间：2023-03-21 18:00:50" itemprop="dateCreated datePublished" datetime="2023-03-21T18:00:50+08:00">2023-03-21</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2023-03-23 16:51:25" itemprop="dateModified" datetime="2023-03-23T16:51:25+08:00">2023-03-23</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -500,7 +612,7 @@
 <p>最后修改主题配置文件<code>_config.yml</code></p>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Valine</span></span><br><span class="line"><span class="comment"># For more information: https://valine.js.org, https://github.com/xCss/Valine</span></span><br><span class="line"><span class="attr">valine:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">appid:</span> <span class="string">t4ThrZRx82oOYRpon1mO6hI1-gzGzoHsz</span></span><br><span class="line">  <span class="attr">appkey:</span> <span class="string">ccBvr06mKTNJ3hZwKVWWz2Yz</span></span><br><span class="line">  <span class="attr">notify:</span> <span class="literal">false</span> <span class="comment"># Mail notifier</span></span><br><span class="line">  <span class="attr">verify:</span> <span class="literal">false</span> <span class="comment"># Verification code</span></span><br><span class="line">  <span class="attr">placeholder:</span> <span class="string">ヾﾉ≧∀≦)o</span> <span class="string">来呀！吐槽一番吧！</span></span><br><span class="line">  <span class="attr">avatar:</span> <span class="string">mm</span> <span class="comment"># Gravatar style</span></span><br><span class="line">  <span class="attr">guest_info:</span> <span class="string">nick,mail</span> <span class="comment"># Custom comment header</span></span><br><span class="line">  <span class="attr">pageSize:</span> <span class="number">10</span> <span class="comment"># Pagination size</span></span><br><span class="line">  <span class="attr">language:</span> <span class="comment"># Language, available values: en, zh-cn</span></span><br><span class="line">  <span class="attr">visitor:</span> <span class="literal">false</span> <span class="comment"># Article reading statistic</span></span><br><span class="line">  <span class="attr">comment_count:</span> <span class="literal">true</span> <span class="comment"># If false, comment count will only be displayed in post page, not in home page</span></span><br><span class="line">  <span class="attr">recordIP:</span> <span class="literal">false</span> <span class="comment"># Whether to record the commenter IP</span></span><br><span class="line">  <span class="attr">serverURLs:</span> <span class="comment"># When the custom domain name is enabled, fill it in here (it will be detected automatically by default, no need to fill in)</span></span><br><span class="line">  <span class="comment">#post_meta_order: 0</span></span><br></pre></td></tr></table></figure>
 
-<p>配置好后，使用<code>hexo g</code>与<code>hexo s</code>命令部署启动查看效果即可。</p>
+<p>配置好后，使用<code>hexo g</code>与<code>hexo s</code>命令部署启动查看效果即可</p>
 <img src="/2023/03/21/Hexo%E6%B7%BB%E5%8A%A0%E8%AF%84%E8%AE%BA%E5%8A%9F%E8%83%BD/image-20230321181707134.png" style="display: inline; border-style: none;">
 
  
@@ -546,10 +658,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2023-03-21 17:38:40 / 修改时间：17:51:48" itemprop="dateCreated datePublished" datetime="2023-03-21T17:38:40+08:00">2023-03-21</time>
+              <time title="创建时间：2023-03-21 17:38:40" itemprop="dateCreated datePublished" datetime="2023-03-21T17:38:40+08:00">2023-03-21</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2023-03-23 16:51:42" itemprop="dateModified" datetime="2023-03-23T16:51:42+08:00">2023-03-23</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -613,7 +731,7 @@
 <p>在文件的最后添加如下内容：</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">“theme-info”</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">“powered-by”</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">“post-count”</span>&gt;</span>共&#123;&#123; totalcount(site) &#125;&#125;字<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<p>配置好后，使用<code>hexo g</code>与<code>hexo s</code>命令部署启动查看效果即可。</p>
+<p>配置好后，使用<code>hexo g</code>与<code>hexo s</code>命令部署启动查看效果即可</p>
 
       
     </div>
@@ -656,10 +774,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2023-03-21 13:46:37 / 修改时间：14:45:25" itemprop="dateCreated datePublished" datetime="2023-03-21T13:46:37+08:00">2023-03-21</time>
+              <time title="创建时间：2023-03-21 13:46:37" itemprop="dateCreated datePublished" datetime="2023-03-21T13:46:37+08:00">2023-03-21</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2023-03-23 16:51:27" itemprop="dateModified" datetime="2023-03-23T16:51:27+08:00">2023-03-23</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -732,7 +856,7 @@
 <p><code>...\themes\next\languages\zh-CN.yml</code></p>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="attr">home:</span> <span class="string">首页</span></span><br><span class="line">  <span class="attr">copywriter:</span> <span class="string">文案</span></span><br><span class="line">  <span class="string">...</span></span><br><span class="line">  <span class="attr">life:</span> <span class="string">生活</span></span><br></pre></td></tr></table></figure>
 
-<p>配置好后，使用<code>hexo g</code>与<code>hexo s</code>命令部署启动查看效果即可。</p>
+<p>配置好后，使用<code>hexo g</code>与<code>hexo s</code>命令部署启动查看效果即可</p>
 
       
     </div>
@@ -816,7 +940,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">5</span>
+          <span class="site-state-item-count">6</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -866,15 +990,15 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">1k</span>
+    <span title="站点总字数">2k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">5 分钟</span>
+    <span title="站点阅读时长">7 分钟</span>
   <span class="post-meta-divider">|</span>
-  <span class=“post-count”>共1.6k字</span>
+  <span class=“post-count”>共2.3k字</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
   </div>
